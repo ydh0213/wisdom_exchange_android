@@ -15,11 +15,11 @@ class ApplicationClass : Application() {
         const val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
         const val TAG = "WISDOM_EXCHANGE_APP"
 
-        private var retrofit: Retrofit? = null
+        private lateinit var retrofit: Retrofit
         var sharedPreferences: SharedPreferences? = null
 
         fun getRetrofit(): Retrofit? {
-            if (retrofit == null) {
+            if (!::retrofit.isInitialized) {
                 val client = OkHttpClient.Builder()
                     .readTimeout(5000, TimeUnit.MILLISECONDS)
                     .connectTimeout(5000, TimeUnit.MILLISECONDS)
