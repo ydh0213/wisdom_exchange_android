@@ -12,15 +12,12 @@ class ApplicationClass : Application() {
     companion object {
         private const val TEST_BASE_URL = ""
         private const val BASE_URL = ""
-
-        var sSharedPreferences: SharedPreferences? = null
-
+        const val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
         const val TAG = "WISDOM_EXCHANGE_APP"
 
-        const val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
         private var retrofit: Retrofit? = null
+        var sharedPreferences: SharedPreferences? = null
 
-        @JvmName("getRetrofit1")
         fun getRetrofit(): Retrofit? {
             if (retrofit == null) {
                 val client = OkHttpClient.Builder()
@@ -42,7 +39,7 @@ class ApplicationClass : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        if (sSharedPreferences == null)
-            sSharedPreferences = applicationContext.getSharedPreferences(TAG, MODE_PRIVATE)
+        if (sharedPreferences == null)
+            sharedPreferences = applicationContext.getSharedPreferences(TAG, MODE_PRIVATE)
     }
 }
