@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">슬기교환소</string>
+    <string name="home">Home</string>
+    <string name="my_page">My Page</string>
+    <string name="notification">Notification</string>
+    <string name="feed">Feed</string>
 </resources>

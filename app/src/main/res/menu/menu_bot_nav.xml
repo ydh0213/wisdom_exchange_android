@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_tab_home"
+        android:icon="@drawable/separator"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/item_tab_notification"
+        android:icon="@drawable/separator"
+        android:title="@string/notification" />
+    <item
+        android:id="@+id/item_tab_feed"
+        android:icon="@drawable/separator"
+        android:title="@string/feed" />
+    <item
+        android:id="@+id/item_tab_my_page"
+        android:icon="@drawable/separator"
+        android:title="@string/my_page" />
+</menu>
