@@ -5,4 +5,5 @@
     <color name="color_accent">#03DAC5</color>
 
     <color name="warm_grey">#707070</color>
+    <color name="light_grey">#efefef</color> <!-- TODO: 색상명 변경 필요 -->
 </resources>

@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">슬기교환소</string>
+    <string name="kr_app_name">슬기교환소</string>
     <string name="home">Home</string>
     <string name="my_page">My Page</string>
     <string name="notification">Notification</string>
     <string name="feed">Feed</string>
-    <string name="알림">알림</string>
-    <string name="피드">피드</string>
-    <string name="마이페이지">마이페이지</string>
+    <string name="kr_notification">알림</string>
+    <string name="kr_feed">피드</string>
+    <string name="kr_my_page">마이페이지</string>
+    <string name="kr_please_enter_a_keyword">키워드를 입력해주세요.</string>
 </resources>

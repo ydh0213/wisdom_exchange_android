@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/알림"
+            android:text="@string/kr_notification"
             android:textStyle="bold"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
