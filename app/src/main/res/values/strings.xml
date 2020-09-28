@@ -12,4 +12,5 @@
     <string name="kr_sort_by_newest">최신순</string>
     <string name="kr_sort_by_hottest">인기순</string>
     <string name="kr_sort_by_reviews">후기순</string>
+    <string name="kr_write">글쓰기</string>
 </resources>

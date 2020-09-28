@@ -24,7 +24,7 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = items.size
 
-    fun add(item: WisdomExchange) { items.add(item) }
+    fun add(item: WisdomExchange) = items.add(item)
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: WisdomExchange) {

@@ -7,5 +7,6 @@
     <color name="black">#000000</color>
     <color name="warm_grey">#707070</color>
     <color name="light_grey">#efefef</color>
-    <color name="very_light_pink">#e5e5e5</color> <!-- TODO: 색상명 변경 필요 -->
+    <color name="very_light_pink">#e5e5e5</color>
+    <color name="white">#ffffff</color>
 </resources>
