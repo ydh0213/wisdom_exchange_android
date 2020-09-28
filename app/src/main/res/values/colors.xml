@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#6200EE</color>
+    <color name="color_primary">#0dddd8</color>
     <color name="color_primary_dark">#3700B3</color>
-    <color name="color_accent">#03DAC5</color>
+    <color name="color_accent">#b834fe</color>
 
+    <color name="black">#000000</color>
     <color name="warm_grey">#707070</color>
     <color name="light_grey">#efefef</color> <!-- TODO: 색상명 변경 필요 -->
 </resources>

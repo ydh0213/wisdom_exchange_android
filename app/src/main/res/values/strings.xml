@@ -8,4 +8,8 @@
     <string name="kr_feed">피드</string>
     <string name="kr_my_page">마이페이지</string>
     <string name="kr_please_enter_a_keyword">키워드를 입력해주세요.</string>
+    <string name="kr_search_option">상세조건</string>
+    <string name="kr_sort_by_newest">최신순</string>
+    <string name="kr_sort_by_hottest">인기순</string>
+    <string name="kr_sort_by_reviews">후기순</string>
 </resources>
