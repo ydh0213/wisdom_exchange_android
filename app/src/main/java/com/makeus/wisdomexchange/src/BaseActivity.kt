@@ -1,5 +1,6 @@
 package com.makeus.wisdomexchange.src
 
+import android.graphics.Rect
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -10,11 +11,17 @@ open class BaseActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        if (currentFocus != null)
-            inputMethodManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-
-        return super.onTouchEvent(event)
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        val focusView = currentFocus
+        if (focusView != null) {
+            val rect = Rect()
+            if (focusView.getGlobalVisibleRect(rect)
+                && !rect.contains(ev!!.x.toInt(), ev.y.toInt())) {
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                if (imm.hideSoftInputFromWindow(focusView.windowToken, 0))
+                    focusView.clearFocus()
+            }
+        }
+        return super.dispatchTouchEvent(ev)
     }
 }
