@@ -5,4 +5,18 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
+    <style name="DenseTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="materialThemeOverlay">@style/ThemeOverlayOutlinedDense</item>
+    </style>
+
+    <style name="ThemeOverlayOutlinedDense">
+        <item name="editTextStyle">@style/TextInputEditText_outlinedBox_dense_h
+        </item>
+    </style>
+
+    <style name="TextInputEditText_outlinedBox_dense_h" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
 </resources>
