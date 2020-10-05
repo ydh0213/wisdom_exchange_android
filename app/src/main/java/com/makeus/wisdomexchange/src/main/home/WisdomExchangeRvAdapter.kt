@@ -7,6 +7,7 @@ import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.TEXT_ALIGNMENT_CENTER
+import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.home.models.WisdomExchange
@@ -31,8 +32,11 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: WisdomExchange) {
-            // TODO: imgUrl 연결
-            // itemView.iv_photo = Glide... (wisdomExchange.imgUrl)
+            if (!item.imgUrl.isEmpty())
+                Glide.with(itemView.context)
+                    .load(item.imgUrl)
+                    .centerCrop()
+                    .into(itemView.iv_photo)
 
             itemView.tv_title.text = item.title
             itemView.tv_my_wisdom.text = item.myWisdom
