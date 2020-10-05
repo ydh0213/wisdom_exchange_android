@@ -12,8 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".src.main.home.PopUpSortByActivity"
+            android:theme="@style/Transparent"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".src.main.MainActivity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

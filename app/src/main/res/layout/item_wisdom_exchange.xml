@@ -14,7 +14,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_camera"
-        android:background="@color/very_light_pink"/>
+        android:background="@color/very_light_pink"
+        android:backgroundTintMode="add"/>
 
     <TextView
         android:id="@+id/tv_title"

@@ -3,6 +3,20 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+
+        <item name="hintTextColor">@color/color_primary</item>
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+    </style>
+
+    <style name="Transparent" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
     <style name="DenseTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
