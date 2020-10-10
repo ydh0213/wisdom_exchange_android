@@ -26,7 +26,7 @@ class FeedRvAdapter(val glide: RequestManager) : RecyclerView.Adapter<FeedRvAdap
 
     fun add(item: Feed) = feedList.add(item)
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(feed: Feed) {
             itemView.tv_content.text = feed.contents
             itemView.tv_writer.text = feed.writer

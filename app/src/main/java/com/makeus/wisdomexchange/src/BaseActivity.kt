@@ -5,6 +5,7 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 open class BaseActivity : AppCompatActivity() {
     fun showCustomToast(message: String?) {
@@ -16,7 +17,8 @@ open class BaseActivity : AppCompatActivity() {
         if (focusView != null) {
             val rect = Rect()
             if (focusView.getGlobalVisibleRect(rect)
-                && !rect.contains(ev!!.x.toInt(), ev.y.toInt())) {
+                && !rect.contains(ev!!.x.toInt(), ev.y.toInt())
+            ) {
                 val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 if (imm.hideSoftInputFromWindow(focusView.windowToken, 0))
                     focusView.clearFocus()
