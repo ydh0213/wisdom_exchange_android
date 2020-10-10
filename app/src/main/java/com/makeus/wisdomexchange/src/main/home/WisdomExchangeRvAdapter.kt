@@ -14,7 +14,7 @@ import com.makeus.wisdomexchange.src.main.home.models.WisdomExchange
 import kotlinx.android.synthetic.main.item_wisdom_exchange.view.*
 
 class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
-    private val items = arrayListOf<WisdomExchange>()
+    private val WisdomExchangeList = arrayListOf<WisdomExchange>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -23,27 +23,27 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(WisdomExchangeList[position])
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = WisdomExchangeList.size
 
-    fun add(item: WisdomExchange) = items.add(item)
+    fun add(item: WisdomExchange) = WisdomExchangeList.add(item)
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: WisdomExchange) {
-            if (!item.imgUrl.isEmpty())
+        fun bind(wisdomExchange: WisdomExchange) {
+            if (!wisdomExchange.imgUrl.isEmpty())
                 Glide.with(itemView.context)
-                    .load(item.imgUrl)
+                    .load(wisdomExchange.imgUrl)
                     .centerCrop()
                     .into(itemView.iv_photo)
 
-            itemView.tv_title.text = item.title
-            itemView.tv_my_wisdom.text = item.myWisdom
-            itemView.tv_hope_wisdom.text = item.hopeWisdom
+            itemView.tv_title.text = wisdomExchange.title
+            itemView.tv_my_wisdom.text = wisdomExchange.myWisdom
+            itemView.tv_hope_wisdom.text = wisdomExchange.hopeWisdom
             itemView.chip_group_my_wisdom_items.removeAllViews()
             itemView.chip_group_hope_wisdom_items.removeAllViews()
-            for (myWisdomItem in item.myWisdomItems) {
+            for (myWisdomItem in wisdomExchange.myWisdomItems) {
                 val chip = Chip(itemView.context)
                 chip.isClickable = false
                 chip.text = myWisdomItem
@@ -69,7 +69,7 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
                 itemView.chip_group_my_wisdom_items.addView(chip)
             }
 
-            for (hopeWisdomItem in item.hopeWisdomItems) {
+            for (hopeWisdomItem in wisdomExchange.hopeWisdomItems) {
                 val chip = Chip(itemView.context)
                 chip.isClickable = false
                 chip.text = hopeWisdomItem
@@ -95,9 +95,9 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
                 itemView.chip_group_hope_wisdom_items.addView(chip)
             }
 
-            itemView.tv_rate.text = item.rate.toString()
-            itemView.tv_view_count.text = item.viewCount.toString()
-            itemView.tv_favorite_count.text = item.favoriteCount.toString()
+            itemView.tv_rate.text = wisdomExchange.rate.toString()
+            itemView.tv_view_count.text = wisdomExchange.viewCount.toString()
+            itemView.tv_favorite_count.text = wisdomExchange.favoriteCount.toString()
         }
     }
 }

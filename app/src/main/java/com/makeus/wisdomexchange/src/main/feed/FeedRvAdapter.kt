@@ -9,7 +9,7 @@ import com.makeus.wisdomexchange.src.main.feed.models.Feed
 import kotlinx.android.synthetic.main.item_feed.view.*
 
 class FeedRvAdapter: RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
-    private val items = arrayListOf<Feed>()
+    private val feedList = arrayListOf<Feed>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -18,20 +18,20 @@ class FeedRvAdapter: RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(feedList[position])
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = feedList.size
 
-    fun add(item: Feed) = items.add(item)
+    fun add(item: Feed) = feedList.add(item)
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(item: Feed) {
-            itemView.tv_content.text = item.contents
-            itemView.tv_writer.text = item.writer
-            itemView.tv_time.text = item.time
-            itemView.tv_heart_count.text = item.heartCount.toString()
-            itemView.tv_comment_count.text = item.commentCount.toString()
+        fun bind(feed: Feed) {
+            itemView.tv_content.text = feed.contents
+            itemView.tv_writer.text = feed.writer
+            itemView.tv_time.text = feed.time
+            itemView.tv_heart_count.text = feed.heartCount.toString()
+            itemView.tv_comment_count.text = feed.commentCount.toString()
         }
     }
 }
