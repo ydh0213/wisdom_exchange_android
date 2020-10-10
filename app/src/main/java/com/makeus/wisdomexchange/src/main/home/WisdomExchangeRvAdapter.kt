@@ -7,13 +7,14 @@ import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.TEXT_ALIGNMENT_CENTER
-import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import com.google.android.material.chip.Chip
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.home.models.WisdomExchange
 import kotlinx.android.synthetic.main.item_wisdom_exchange.view.*
 
-class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
+class WisdomExchangeRvAdapter(private val glide: RequestManager) :
+    Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
     private val WisdomExchangeList = arrayListOf<WisdomExchange>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,11 +31,10 @@ class WisdomExchangeRvAdapter: Adapter<WisdomExchangeRvAdapter.ViewHolder>() {
 
     fun add(item: WisdomExchange) = WisdomExchangeList.add(item)
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(wisdomExchange: WisdomExchange) {
             if (!wisdomExchange.imgUrl.isEmpty())
-                Glide.with(itemView.context)
-                    .load(wisdomExchange.imgUrl)
+                glide.load(wisdomExchange.imgUrl)
                     .centerCrop()
                     .into(itemView.iv_photo)
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.feed.models.Feed
 import kotlinx.android.synthetic.main.fragment_feed.*
@@ -27,9 +28,8 @@ class FeedFragment : Fragment() {
     }
 
     private fun initRv(view: View) {
-        val feedRvAdapter = FeedRvAdapter()
+        val feedRvAdapter = FeedRvAdapter(Glide.with(this))
         rv_feed.apply {
-            setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
             adapter = feedRvAdapter
         }
@@ -47,6 +47,10 @@ class FeedFragment : Fragment() {
         feedRvAdapter.add(Feed("가을이 온다... 흑흑 외로웡ㅇㅇ유ㅠㅠㅠㅠ", "윤디", "오후 7:27", 54, 35))
         feedRvAdapter.add(Feed("이걸 보는 자 다들 올해도 솔크를 보낼터이니 크킄ㅋ크ㅡ크킄나만당할순없지 전부 저주에 걸려버려라 아ㅏㅏ앙앙ㅇ아ㅏ아 솔로천국커플지옥 다 망해버려라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ", "???", "오후 7:29", 87, 5))
         feedRvAdapter.add(Feed("아아아니 이거 실화냐", "록", "오후 9:58", 60, 7))
+        feedRvAdapter.add(Feed("Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt", "익명", "오전 12:00", 0, 0))
+        feedRvAdapter.add(Feed("Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt", "익명", "오전 12:00", 0, 0))
+        feedRvAdapter.add(Feed("Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt", "익명", "오전 12:00", 0, 0))
+        feedRvAdapter.add(Feed("Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt", "익명", "오전 12:00", 0, 0))
     }
 
     companion object {

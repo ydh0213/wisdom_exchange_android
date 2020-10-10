@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.home.models.WisdomExchange
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
     private var selectedIndexSortBy = 0
-    private val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter()
+    private val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter(Glide.with(this))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

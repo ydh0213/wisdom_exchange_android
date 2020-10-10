@@ -24,4 +24,14 @@ open class BaseActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        Glide.get(this).clearMemory()
+    }
+
+    override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
+        Glide.get(this).trimMemory(level)
+    }
 }

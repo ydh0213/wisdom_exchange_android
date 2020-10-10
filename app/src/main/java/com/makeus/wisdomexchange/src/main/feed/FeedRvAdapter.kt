@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.RequestManager
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.feed.models.Feed
 import kotlinx.android.synthetic.main.item_feed.view.*
 
-class FeedRvAdapter: RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
+class FeedRvAdapter(val glide: RequestManager) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
     private val feedList = arrayListOf<Feed>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
