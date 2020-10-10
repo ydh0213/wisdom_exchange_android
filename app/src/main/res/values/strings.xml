@@ -13,4 +13,14 @@
     <string name="kr_sort_by_hottest">인기순</string>
     <string name="kr_sort_by_reviews">후기순</string>
     <string name="kr_write">글쓰기</string>
+    <string name="kr_see_wisdom_exchange_detail">교환서 보기</string>
+    <string name="kr_accept">수락하기</string>
+    <string name="kr_write_evaluation">슬기 교환 후기 작성하기</string>
+    <string name="kr_contact_info">연락처</string>
+    <string name="kr_wisdom_exchange_request">슬기교환 요청</string>
+    <string name="kr_wisdom_exchange_accept_request">슬기교환 요청 수락</string>
+    <string name="kr_wisdom_exchange_request_from_me_to_other_description">nickname님에게 슬기교환을 요청했습니다. nickname님이 수락하시면 연락처가 교환됩니다.</string>
+    <string name="kr_wisdom_exchange_request_from_me_to_other_accept_description">nickname님이 슬기교환 요청을 수락했습니다! 연락처가 교환되었습니다. 즐거운 슬기교환 보내세요:)</string>
+    <string name="kr_wisdom_exchange_request_from_other_to_me_description">nickname님이 슬기교환을 요청했습니다! ‘수락하기’ 버튼을 누르면 연락처가 교환됩니다.</string>
+    <string name="kr_wisdom_exchange_request_from_other_to_me_accept_description">nickname님의 슬기교환 요청을 수락했습니다. 연락처가 교환되었습니다. 즐거운 슬기교환 보내세요:)</string>
 </resources>

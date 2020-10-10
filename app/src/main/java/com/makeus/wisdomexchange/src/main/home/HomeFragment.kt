@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
     private var selectedIndexSortBy = 0
-    private val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter(Glide.with(this))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -40,6 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRv() {
+        val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter(Glide.with(this))
         rv_wisdom_exchange.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)

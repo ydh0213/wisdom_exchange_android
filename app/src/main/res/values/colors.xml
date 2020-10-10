@@ -3,9 +3,11 @@
     <color name="color_primary">#0dddd8</color>
     <color name="color_primary_dark">#3700B3</color>
     <color name="color_accent">#b834fe</color>
+    <color name="lightish_purple">#9632dc</color>
 
     <color name="black">#000000</color>
     <color name="warm_grey">#707070</color>
+    <color name="warm_grey_two">#7c7c7c</color>
     <color name="light_grey">#efefef</color>
     <color name="very_light_pink">#e5e5e5</color>
     <color name="white">#ffffff</color>

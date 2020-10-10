@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         app:layout_constraintBottom_toTopOf="@+id/bot_nav"
-        android:src="@drawable/separator"/>
+        android:src="@drawable/separator_warm_grey"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bot_nav"

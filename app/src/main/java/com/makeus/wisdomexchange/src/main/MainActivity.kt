@@ -6,12 +6,12 @@ import com.makeus.wisdomexchange.src.BaseActivity
 import com.makeus.wisdomexchange.src.main.feed.FeedFragment
 import com.makeus.wisdomexchange.src.main.home.HomeFragment
 import com.makeus.wisdomexchange.src.main.my_page.MyPageFragment
-import com.makeus.wisdomexchange.src.main.notification.NotificationFragment
+import com.makeus.wisdomexchange.src.main.notification.NotiFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
     private var homeFragment: HomeFragment? = null
-    private var notificationFragment: NotificationFragment? = null
+    private var notiFragment: NotiFragment? = null
     private var feedFragment: FeedFragment? = null
     private var myPageFragment: MyPageFragment? = null
 
@@ -44,7 +44,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (homeFragment != null) transaction.show(homeFragment!!)
-        if (notificationFragment != null) transaction.hide(notificationFragment!!)
+        if (notiFragment != null) transaction.hide(notiFragment!!)
         if (feedFragment != null) transaction.hide(feedFragment!!)
         if (myPageFragment != null) transaction.hide(myPageFragment!!)
 
@@ -53,13 +53,13 @@ class MainActivity : BaseActivity() {
 
     private fun onMoveNotificationFragment() {
         val transaction = supportFragmentManager.beginTransaction()
-        if (notificationFragment == null) {
-            notificationFragment = NotificationFragment.newInstance()
-            transaction.add(R.id.cl_main_screen, notificationFragment!!)
+        if (notiFragment == null) {
+            notiFragment = NotiFragment.newInstance()
+            transaction.add(R.id.cl_main_screen, notiFragment!!)
         }
 
         if (homeFragment != null) transaction.hide(homeFragment!!)
-        if (notificationFragment != null) transaction.show(notificationFragment!!)
+        if (notiFragment != null) transaction.show(notiFragment!!)
         if (feedFragment != null) transaction.hide(feedFragment!!)
         if (myPageFragment != null) transaction.hide(myPageFragment!!)
 
@@ -74,7 +74,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (homeFragment != null) transaction.hide(homeFragment!!)
-        if (notificationFragment != null) transaction.hide(notificationFragment!!)
+        if (notiFragment != null) transaction.hide(notiFragment!!)
         if (feedFragment != null) transaction.show(feedFragment!!)
         if (myPageFragment != null) transaction.hide(myPageFragment!!)
 
@@ -89,7 +89,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (homeFragment != null) transaction.hide(homeFragment!!)
-        if (notificationFragment != null) transaction.hide(notificationFragment!!)
+        if (notiFragment != null) transaction.hide(notiFragment!!)
         if (feedFragment != null) transaction.hide(feedFragment!!)
         if (myPageFragment != null) transaction.show(myPageFragment!!)
 
