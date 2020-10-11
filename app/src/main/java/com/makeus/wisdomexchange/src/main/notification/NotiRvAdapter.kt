@@ -38,7 +38,11 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
                     .circleCrop()
                     .into(itemView.iv_profile)
 
+            itemView.tv_date_time.text = noti.updateTime
+
             if (noti.isSender == 1) { // 내가 남에게 요청 보냄
+                itemView.iv_circle_arrow_left.visibility = VISIBLE
+                itemView.iv_circle_arrow_right.visibility = GONE
                 if (noti.isExchanged == 1) { // 수락 완료
                     itemView.tv_title.text =
                         itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
@@ -46,6 +50,8 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
                     itemView.tv_description.text =
                         itemView.context.getString(R.string.kr_wisdom_exchange_request_from_me_to_other_accept_description)
                             .replace("nickname", noti.opponent_nick)
+
+                    itemView.tv_phone_number.text = noti.phone
 
                     itemView.btn_see_wisdom_exchange_detail.visibility = GONE
                     itemView.btn_accept.visibility = GONE
@@ -67,6 +73,8 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
                     itemView.tv_phone_number.visibility = GONE
                 }
             } else { // 남이 나에게 요청함
+                itemView.iv_circle_arrow_left.visibility = GONE
+                itemView.iv_circle_arrow_right.visibility = VISIBLE
                 if (noti.isExchanged == 1) { // 수락 완료
                     itemView.tv_title.text =
                         itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
@@ -74,6 +82,8 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
                     itemView.tv_description.text =
                         itemView.context.getString(R.string.kr_wisdom_exchange_request_from_other_to_me_accept_description)
                             .replace("nickname", noti.opponent_nick)
+
+                    itemView.tv_phone_number.text = noti.phone
 
                     itemView.btn_see_wisdom_exchange_detail.visibility = GONE
                     itemView.btn_accept.visibility = GONE
@@ -95,8 +105,6 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
                     itemView.tv_phone_number.visibility = GONE
                 }
             }
-
-            itemView.tv_date_time.text = noti.updateTime
         }
     }
 }
