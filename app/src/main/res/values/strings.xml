@@ -23,4 +23,9 @@
     <string name="kr_wisdom_exchange_request_from_me_to_other_accept_description">nickname님이 슬기교환 요청을 수락했습니다! 연락처가 교환되었습니다. 즐거운 슬기교환 보내세요:)</string>
     <string name="kr_wisdom_exchange_request_from_other_to_me_description">nickname님이 슬기교환을 요청했습니다! ‘수락하기’ 버튼을 누르면 연락처가 교환됩니다.</string>
     <string name="kr_wisdom_exchange_request_from_other_to_me_accept_description">nickname님의 슬기교환 요청을 수락했습니다. 연락처가 교환되었습니다. 즐거운 슬기교환 보내세요:)</string>
+    <string name="kr_my_profile">내 프로필</string>
+    <string name="kr_wisdom_exchange">슬기 교환서</string>
+    <string name="kr_please_fill_out_the_wisdom_exchange_form">슬기 교환서를 작성해 주세요!</string>
+    <string name="kr_favorite_wisdom_exchange">즐겨찾는 슬기 교환서</string>
+    <string name="kr_logout">로그아웃</string>
 </resources>
