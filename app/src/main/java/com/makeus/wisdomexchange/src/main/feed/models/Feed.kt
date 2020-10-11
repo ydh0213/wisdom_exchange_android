@@ -1,23 +1,11 @@
 package com.makeus.wisdomexchange.src.main.feed.models
 
-class Feed {
-    var contents: String
-    var writer: String
-    var time: String
-    var heartCount: Int
-    var commentCount: Int
-
-    constructor(
-        contents: String,
-        writer: String,
-        time: String,
-        heartCount: Int,
-        commentCount: Int
-    ) {
-        this.contents = contents
-        this.writer = writer
-        this.time = time
-        this.heartCount = heartCount
-        this.commentCount = commentCount
-    }
-}
+class Feed (
+    var post_id: Int,
+    var nick_name: String,
+    var content: String,
+    var createTime: String,
+    var post_image: String?,
+    var likeCnt: Int,
+    var CommentCnt: Int
+)

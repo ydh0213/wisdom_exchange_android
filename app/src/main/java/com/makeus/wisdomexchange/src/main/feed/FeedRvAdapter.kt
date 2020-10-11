@@ -2,6 +2,8 @@ package com.makeus.wisdomexchange.src.main.feed
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
@@ -28,11 +30,19 @@ class FeedRvAdapter(private val glide: RequestManager) : RecyclerView.Adapter<Fe
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(feed: Feed) {
-            itemView.tv_content.text = feed.contents
-            itemView.tv_writer.text = feed.writer
-            itemView.tv_time.text = feed.time
-            itemView.tv_heart_count.text = feed.heartCount.toString()
-            itemView.tv_comment_count.text = feed.commentCount.toString()
+            itemView.tv_writer.text = feed.nick_name
+            itemView.tv_time.text = feed.createTime
+            itemView.tv_heart_count.text = feed.likeCnt.toString()
+            itemView.tv_comment_count.text = feed.CommentCnt.toString()
+            itemView.tv_content.text = feed.content
+            if (feed.post_image == null || feed.post_image!!.isEmpty())
+                itemView.iv_photo.visibility = GONE
+            else {
+                itemView.iv_photo.visibility = VISIBLE
+                glide.load(feed.post_image)
+                    .centerCrop()
+                    .into(itemView.iv_photo)
+            }
         }
     }
 }
