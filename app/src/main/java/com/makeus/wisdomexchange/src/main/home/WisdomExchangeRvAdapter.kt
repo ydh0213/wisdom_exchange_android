@@ -47,7 +47,7 @@ class WisdomExchangeRvAdapter(private val glide: RequestManager) :
                 val chip = Chip(itemView.context)
                 chip.isClickable = false
                 chip.text = myWisdomItem
-                chip.textSize = 10F
+                chip.textSize = 8F
                 chip.textAlignment = TEXT_ALIGNMENT_CENTER
                 chip.chipStrokeWidth = 3F
 
@@ -73,7 +73,7 @@ class WisdomExchangeRvAdapter(private val glide: RequestManager) :
                 val chip = Chip(itemView.context)
                 chip.isClickable = false
                 chip.text = hopeWisdomItem
-                chip.textSize = 10F
+                chip.textSize = 8F
                 chip.textAlignment = TEXT_ALIGNMENT_CENTER
                 chip.chipStrokeWidth = 3F
 
