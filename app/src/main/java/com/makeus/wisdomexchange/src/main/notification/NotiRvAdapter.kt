@@ -12,7 +12,7 @@ import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.notification.models.Noti
 import kotlinx.android.synthetic.main.item_noti.view.*
 
-class NotiRvAdapter(val glide: RequestManager) : Adapter<NotiRvAdapter.ViewHolder>() {
+class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.ViewHolder>() {
     private val notiList = arrayListOf<Noti>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

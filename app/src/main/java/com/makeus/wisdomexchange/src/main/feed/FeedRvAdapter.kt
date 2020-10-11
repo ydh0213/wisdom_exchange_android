@@ -9,7 +9,7 @@ import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.main.feed.models.Feed
 import kotlinx.android.synthetic.main.item_feed.view.*
 
-class FeedRvAdapter(val glide: RequestManager) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
+class FeedRvAdapter(private val glide: RequestManager) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
     private val feedList = arrayListOf<Feed>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
