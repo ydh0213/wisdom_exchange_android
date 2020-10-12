@@ -28,4 +28,8 @@
     <string name="kr_please_fill_out_the_wisdom_exchange_form">슬기 교환서를 작성해 주세요!</string>
     <string name="kr_favorite_wisdom_exchange">즐겨찾는 슬기 교환서</string>
     <string name="kr_logout">로그아웃</string>
+    <string name="kr_my_wisdom">나의 슬기</string>
+    <string name="kr_hope_wisdom">희망슬기</string>
+    <string name="kr_exchange_reviews">교환후기</string>
+    <string name="kr_hope_required">희망조건</string>
 </resources>

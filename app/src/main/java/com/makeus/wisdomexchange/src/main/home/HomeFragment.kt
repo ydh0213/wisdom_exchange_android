@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRv() {
-        val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter(Glide.with(this))
+        val wisdomExchangeRvAdapter = WisdomExchangeRvAdapter(this, Glide.with(this))
         rv_wisdom_exchange.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
