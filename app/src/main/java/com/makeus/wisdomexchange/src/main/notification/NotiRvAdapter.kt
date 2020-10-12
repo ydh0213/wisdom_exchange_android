@@ -41,69 +41,69 @@ class NotiRvAdapter(private val glide: RequestManager) : Adapter<NotiRvAdapter.V
             itemView.tv_date_time.text = noti.updateTime
 
             if (noti.isSender == 1) { // 내가 남에게 요청 보냄
-                itemView.iv_circle_arrow_left.visibility = VISIBLE
-                itemView.iv_circle_arrow_right.visibility = GONE
-                if (noti.isExchanged == 1) { // 수락 완료
-                    itemView.tv_title.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
-
-                    itemView.tv_description.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request_from_me_to_other_accept_description)
-                            .replace("nickname", noti.opponent_nick)
-
-                    itemView.tv_phone_number.text = noti.phone
-
-                    itemView.btn_see_wisdom_exchange_detail.visibility = GONE
-                    itemView.btn_accept.visibility = GONE
-                    itemView.btn_write_evaluation.visibility = GONE
-                    itemView.tv_contact_info.visibility = VISIBLE
-                    itemView.tv_phone_number.visibility = VISIBLE
-                } else { // 신청한 상태
-                    itemView.tv_title.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request)
-
-                    itemView.tv_description.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request_from_me_to_other_description)
-                            .replace("nickname", noti.opponent_nick)
-
-                    itemView.btn_see_wisdom_exchange_detail.visibility = VISIBLE
-                    itemView.btn_accept.visibility = GONE
-                    itemView.btn_write_evaluation.visibility = GONE
-                    itemView.tv_contact_info.visibility = GONE
-                    itemView.tv_phone_number.visibility = GONE
+                itemView.apply {
+                    iv_circle_arrow_left.visibility = VISIBLE
+                    iv_circle_arrow_right.visibility = GONE
                 }
+                if (noti.isExchanged == 1) // 수락 완료
+                    itemView.apply {
+                        tv_title.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
+                        tv_description.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request_from_me_to_other_accept_description)
+                                .replace("nickname", noti.opponent_nick)
+                        tv_phone_number.text = noti.phone
+                        btn_see_wisdom_exchange_detail.visibility = GONE
+                        btn_accept.visibility = GONE
+                        btn_write_evaluation.visibility = GONE
+                        tv_contact_info.visibility = VISIBLE
+                        tv_phone_number.visibility = VISIBLE
+                    }
+                else // 신청한 상태
+                    itemView.apply {
+                        tv_title.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request)
+                        tv_description.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request_from_me_to_other_description)
+                                .replace("nickname", noti.opponent_nick)
+                        btn_see_wisdom_exchange_detail.visibility = VISIBLE
+                        btn_accept.visibility = GONE
+                        btn_write_evaluation.visibility = GONE
+                        tv_contact_info.visibility = GONE
+                        tv_phone_number.visibility = GONE
+                    }
             } else { // 남이 나에게 요청함
-                itemView.iv_circle_arrow_left.visibility = GONE
-                itemView.iv_circle_arrow_right.visibility = VISIBLE
-                if (noti.isExchanged == 1) { // 수락 완료
-                    itemView.tv_title.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
-
-                    itemView.tv_description.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request_from_other_to_me_accept_description)
-                            .replace("nickname", noti.opponent_nick)
-
-                    itemView.tv_phone_number.text = noti.phone
-
-                    itemView.btn_see_wisdom_exchange_detail.visibility = GONE
-                    itemView.btn_accept.visibility = GONE
-                    itemView.btn_write_evaluation.visibility = GONE
-                    itemView.tv_contact_info.visibility = VISIBLE
-                    itemView.tv_phone_number.visibility = VISIBLE
-                } else { // 신청받은 상태
-                    itemView.tv_title.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request)
-
-                    itemView.tv_description.text =
-                        itemView.context.getString(R.string.kr_wisdom_exchange_request_from_other_to_me_description)
-                            .replace("nickname", noti.opponent_nick)
-
-                    itemView.btn_see_wisdom_exchange_detail.visibility = VISIBLE
-                    itemView.btn_accept.visibility = VISIBLE
-                    itemView.btn_write_evaluation.visibility = GONE
-                    itemView.tv_contact_info.visibility = GONE
-                    itemView.tv_phone_number.visibility = GONE
+                itemView.apply {
+                    iv_circle_arrow_left.visibility = GONE
+                    iv_circle_arrow_right.visibility = VISIBLE
                 }
+                if (noti.isExchanged == 1) // 수락 완료
+                    itemView.apply {
+                        tv_title.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_accept_request)
+                        tv_description.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request_from_other_to_me_accept_description)
+                                .replace("nickname", noti.opponent_nick)
+                        tv_phone_number.text = noti.phone
+                        btn_see_wisdom_exchange_detail.visibility = GONE
+                        btn_accept.visibility = GONE
+                        btn_write_evaluation.visibility = GONE
+                        tv_contact_info.visibility = VISIBLE
+                        tv_phone_number.visibility = VISIBLE
+                    }
+                else // 신청받은 상태
+                    itemView.apply {
+                        tv_title.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request)
+                        tv_description.text =
+                            itemView.context.getString(R.string.kr_wisdom_exchange_request_from_other_to_me_description)
+                                .replace("nickname", noti.opponent_nick)
+                        btn_see_wisdom_exchange_detail.visibility = VISIBLE
+                        btn_accept.visibility = VISIBLE
+                        btn_write_evaluation.visibility = GONE
+                        tv_contact_info.visibility = GONE
+                        tv_phone_number.visibility = GONE
+                    }
             }
         }
     }

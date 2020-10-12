@@ -38,66 +38,71 @@ class WisdomExchangeRvAdapter(private val glide: RequestManager) :
                     .centerCrop()
                     .into(itemView.iv_photo)
 
-            itemView.tv_title.text = wisdomExchange.title
-            itemView.tv_my_wisdom.text = wisdomExchange.myWisdom
-            itemView.tv_hope_wisdom.text = wisdomExchange.hopeWisdom
-            itemView.chip_group_my_wisdom_items.removeAllViews()
-            itemView.chip_group_hope_wisdom_items.removeAllViews()
+            itemView.apply {
+                tv_title.text = wisdomExchange.title
+                tv_my_wisdom.text = wisdomExchange.myWisdom
+                tv_hope_wisdom.text = wisdomExchange.hopeWisdom
+                chip_group_my_wisdom_items.removeAllViews()
+                chip_group_hope_wisdom_items.removeAllViews()
+
+                tv_rate.text = wisdomExchange.rate.toString()
+                tv_view_count.text = wisdomExchange.viewCount.toString()
+                tv_favorite_count.text = wisdomExchange.favoriteCount.toString()
+            }
+
             for (myWisdomItem in wisdomExchange.myWisdomItems) {
-                val chip = Chip(itemView.context)
-                chip.isClickable = false
-                chip.text = myWisdomItem
-                chip.textSize = 8F
-                chip.textAlignment = TEXT_ALIGNMENT_CENTER
-                chip.chipStrokeWidth = 3F
+                val chip = Chip(itemView.context).apply {
+                    isClickable = false
+                    text = myWisdomItem
+                    textSize = 8F
+                    textAlignment = TEXT_ALIGNMENT_CENTER
+                    chipStrokeWidth = 3F
 
-                chip.minHeight = 0
-                chip.minimumHeight = 0
-                chip.chipMinHeight = 0F
+                    minHeight = 0
+                    minimumHeight = 0
+                    chipMinHeight = 0F
 
-                chip.chipStartPadding = 0F
-                chip.chipEndPadding = 0F
-                chip.textStartPadding = 0F
-                chip.textEndPadding = 0F
+                    chipStartPadding = 0F
+                    chipEndPadding = 0F
+                    textStartPadding = 0F
+                    textEndPadding = 0F
 
-                chip.setPadding(10)
+                    setPadding(10)
 
-                chip.setEnsureMinTouchTargetSize(false)
-                chip.setChipBackgroundColorResource(R.color.transparent)
-                chip.setChipStrokeColorResource(R.color.color_primary)
-                chip.setTextColor(itemView.context.getColor(R.color.color_primary))
+                    setEnsureMinTouchTargetSize(false)
+                    setChipBackgroundColorResource(R.color.transparent)
+                    setChipStrokeColorResource(R.color.color_primary)
+                    setTextColor(itemView.context.getColor(R.color.color_primary))
+                }
                 itemView.chip_group_my_wisdom_items.addView(chip)
             }
 
             for (hopeWisdomItem in wisdomExchange.hopeWisdomItems) {
-                val chip = Chip(itemView.context)
-                chip.isClickable = false
-                chip.text = hopeWisdomItem
-                chip.textSize = 8F
-                chip.textAlignment = TEXT_ALIGNMENT_CENTER
-                chip.chipStrokeWidth = 3F
+                val chip = Chip(itemView.context).apply {
+                    isClickable = false
+                    text = hopeWisdomItem
+                    textSize = 8F
+                    textAlignment = TEXT_ALIGNMENT_CENTER
+                    chipStrokeWidth = 3F
 
-                chip.minHeight = 0
-                chip.minimumHeight = 0
-                chip.chipMinHeight = 0F
+                    minHeight = 0
+                    minimumHeight = 0
+                    chipMinHeight = 0F
 
-                chip.chipStartPadding = 0F
-                chip.chipEndPadding = 0F
-                chip.textStartPadding = 0F
-                chip.textEndPadding = 0F
+                    chipStartPadding = 0F
+                    chipEndPadding = 0F
+                    textStartPadding = 0F
+                    textEndPadding = 0F
 
-                chip.setPadding(10)
+                    setPadding(10)
 
-                chip.setEnsureMinTouchTargetSize(false)
-                chip.setChipBackgroundColorResource(R.color.transparent)
-                chip.setChipStrokeColorResource(R.color.color_accent)
-                chip.setTextColor(itemView.context.getColor(R.color.color_accent))
+                    setEnsureMinTouchTargetSize(false)
+                    setChipBackgroundColorResource(R.color.transparent)
+                    setChipStrokeColorResource(R.color.color_accent)
+                    setTextColor(itemView.context.getColor(R.color.color_accent))
+                }
                 itemView.chip_group_hope_wisdom_items.addView(chip)
             }
-
-            itemView.tv_rate.text = wisdomExchange.rate.toString()
-            itemView.tv_view_count.text = wisdomExchange.viewCount.toString()
-            itemView.tv_favorite_count.text = wisdomExchange.favoriteCount.toString()
         }
     }
 }
