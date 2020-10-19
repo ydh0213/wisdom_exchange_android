@@ -121,6 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_sorted_by" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_sorted_by"
+        tools:listitem="@layout/item_wisdom_exchange" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
