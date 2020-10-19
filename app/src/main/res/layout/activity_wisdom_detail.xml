@@ -115,6 +115,29 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_photo" />
 
     <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_img_default_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintWidth_max="40dp"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+        android:layout_marginStart="8dp"
+        android:text="닉네임"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:src="@drawable/separator_warm_grey"
@@ -125,11 +148,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile"
         app:tabIndicatorColor="@color/black"
         app:tabIndicatorFullWidth="false"
         app:tabSelectedTextColor="@color/black"
