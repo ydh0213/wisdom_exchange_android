@@ -156,32 +156,10 @@
         app:tabIndicatorColor="@color/black"
         app:tabIndicatorFullWidth="false"
         app:tabSelectedTextColor="@color/black"
-        app:tabTextColor="@color/warm_grey">
+        app:tabTextColor="@color/warm_grey" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kr_my_wisdom" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kr_hope_wisdom" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kr_hope_required" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kr_exchange_reviews" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_main_screen"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_widom_info"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/cl_request_btn"
