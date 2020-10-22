@@ -1,8 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".src.wisdom_detail.my_wisdom.MyWisdomFragment">
+
+    <TextView
+        android:id="@+id/tv_my_wisdom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:text="프로그래밍"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_my_wisdom_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:chipSpacing="0dp"
+        app:itemSpacing="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_wisdom" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="나의 재능을 소개해주세요/나의 재능을 소개해주세요/나의 재능을 소개해주세요/나의 재능을 소개해주세요/나의 재능을 소개해주세요/나의 재능을 소개해주세요/나의 재능"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/chip_group_my_wisdom_items" />
+
+    <ImageView
+        android:id="@+id/iv_separator1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/separator_warm_grey"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+    <ImageView
+        android:id="@+id/iv_dot1"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/dot_warm_grey_two"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/iv_separator1" />
+
+    <TextView
+        android:id="@+id/tv_education_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/kr_educational_background"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot1"
+        app:layout_constraintStart_toEndOf="@+id/iv_dot1"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot1" />
+
+    <TextView
+        android:id="@+id/tv_education"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="슬기의 학력을 입력해주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot1"
+        app:layout_constraintStart_toEndOf="@+id/tv_certificate_title"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot1" />
+
+    <ImageView
+        android:id="@+id/iv_dot2"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/dot_warm_grey_two"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dot1" />
+
+    <TextView
+        android:id="@+id/tv_career_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/kr_tv_career_title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot2"
+        app:layout_constraintStart_toEndOf="@+id/iv_dot2"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot2" />
+
+    <TextView
+        android:id="@+id/tv_tv_career"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="슬기의 경력을 입력해주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot2"
+        app:layout_constraintStart_toEndOf="@+id/tv_certificate_title"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot2" />
+
+    <ImageView
+        android:id="@+id/iv_dot3"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/dot_warm_grey_two"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dot2" />
+
+    <TextView
+        android:id="@+id/tv_certificate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/kr_certificate"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot3"
+        app:layout_constraintStart_toEndOf="@+id/iv_dot3"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot3" />
+
+    <TextView
+        android:id="@+id/tv_certificate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="슬기의 자격증을 입력해주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot3"
+        app:layout_constraintStart_toEndOf="@+id/tv_certificate_title"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot3" />
+
+    <ImageView
+        android:id="@+id/iv_separator2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/separator_warm_grey"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dot3" />
+
+    <TextView
+        android:id="@+id/tv_curriculum_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="커리큘럼"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/iv_separator2" />
+
+    <TextView
+        android:id="@+id/tv_curriculum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="내가 알려줄 수업 내용에 관해 작성해 주세요/내가 알려줄 수업 내용에 관해 작성해 주세요 /내가 알려줄 수업 내용에 관해 작성해 주세요 /내가 알려줄 수업 내용에 관해 작성해 주세요 /내가 알려줄 수업 내용에 관해 작성해 주세요 /내가 알려줄 수업 내용에 관해 작성해 주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_curriculum_title"
+        app:layout_constraintVertical_bias="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

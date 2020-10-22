@@ -33,4 +33,7 @@
     <string name="kr_exchange_reviews">교환후기</string>
     <string name="kr_hope_required">희망조건</string>
     <string name="kr_request_exchange">교환 신청하기</string>
+    <string name="kr_educational_background">학력</string>
+    <string name="kr_tv_career_title">경력</string>
+    <string name="kr_certificate">자격증</string>
 </resources>
