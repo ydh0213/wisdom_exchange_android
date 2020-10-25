@@ -47,4 +47,10 @@
     <string name="kr_hope_area">희망 지역</string>
     <string name="kr_hope_etc">기타 희망사항</string>
     <string name="kr_can_do_by_online">온라인 슬기 교환 가능</string>
+    <string name="kr_request_exchange_done">교환신청 완료!</string>
+    <string name="kr_exchange_opponent">슬기 교환 대상</string>
+    <string name="kr_ok">확인</string>
+    <string name="kr_cancel">취소</string>
+    <string name="kr_confirm">확인</string>
+    <string name="kr_request_confirm_message">슬기 교환을 신청하시겠습니까?</string>
 </resources>

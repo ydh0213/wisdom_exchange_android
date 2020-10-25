@@ -1,5 +1,7 @@
 package com.makeus.wisdomexchange.src.wisdom_detail
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +26,37 @@ class WisdomDetailActivity : BaseActivity() {
 
         cl_back_btn.setOnClickListener { finish() }
 
+        initInfoVp2()
+
+        cl_request_btn.setOnClickListener {
+            AlertDialog.Builder(it.context).apply {
+                setMessage(getString(R.string.kr_request_confirm_message))
+                setPositiveButton(getString(R.string.kr_confirm)) { dialog, which ->
+                    // TODO: 교환신청 API 호출 후 성공시 아래 코드 수행하도록
+                    startActivity(Intent(applicationContext, DoneActivity::class.java))
+                }
+                setNegativeButton(getString(R.string.kr_cancel)) { dialog, which -> dialog.cancel() }
+            }.create().show()
+        }
+    }
+
+    private fun initPhotoVp2() {
+        val photoVp2Adapter = PhotoVp2Adapter(Glide.with(this))
+        vp2_photo.adapter = photoVp2Adapter
+
+        // TODO: 테스트 코드. 나중에 삭제해야 함
+        photoVp2Adapter.addAll(
+            listOf(
+                "https://image.gamechosun.co.kr/wlwl_upload/dataroom/common/2018/10/03/350157_1538559366.jpg",
+                "https://cdn.clien.net/web/api/file/F01/3754728/9807d4bde03b4dd08ad.JPG",
+                "https://img.animalplanet.co.kr/news/2020/02/05/700/62i8dsm805t822t059yt.jpg"
+            )
+        )
+
+        TabLayoutMediator(tl_photo_indicator, vp2_photo) { tab, position -> tab.select() }.attach()
+    }
+
+    private fun initInfoVp2() {
         val infoVp2Adapter = WisdomInfoVp2Adapter(this)
         vp2_widom_info.apply {
             adapter = infoVp2Adapter
@@ -57,21 +90,5 @@ class WisdomDetailActivity : BaseActivity() {
                 else -> ""
             }
         }.attach()
-    }
-
-    private fun initPhotoVp2() {
-        val photoVp2Adapter = PhotoVp2Adapter(Glide.with(this))
-        vp2_photo.adapter = photoVp2Adapter
-
-        // TODO: 테스트 코드. 나중에 삭제해야 함
-        photoVp2Adapter.addAll(
-            listOf(
-                "https://image.gamechosun.co.kr/wlwl_upload/dataroom/common/2018/10/03/350157_1538559366.jpg",
-                "https://cdn.clien.net/web/api/file/F01/3754728/9807d4bde03b4dd08ad.JPG",
-                "https://img.animalplanet.co.kr/news/2020/02/05/700/62i8dsm805t822t059yt.jpg"
-            )
-        )
-
-        TabLayoutMediator(tl_photo_indicator, vp2_photo) { tab, position -> tab.select() }.attach()
     }
 }

@@ -14,11 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".src.wisdom_detail.DoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".src.wisdom_detail.WisdomDetailActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".src.main.home.PopUpSortByActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Transparent" />
         <activity
             android:name=".src.main.MainActivity"
