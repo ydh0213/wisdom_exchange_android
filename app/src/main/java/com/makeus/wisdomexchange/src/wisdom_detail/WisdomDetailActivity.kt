@@ -1,15 +1,13 @@
 package com.makeus.wisdomexchange.src.wisdom_detail
 
 import android.os.Bundle
+import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.makeus.wisdomexchange.R
 import com.makeus.wisdomexchange.src.BaseActivity
-import com.makeus.wisdomexchange.src.main.home.HomeFragment
-import com.makeus.wisdomexchange.src.wisdom_detail.exchange_reviews.ExchangeReviewsFragment
-import com.makeus.wisdomexchange.src.wisdom_detail.hope_required.HopeRequiredFragment
-import com.makeus.wisdomexchange.src.wisdom_detail.my_wisdom.MyWisdomFragment
 import kotlinx.android.synthetic.main.activity_wisdom_detail.*
 
 class WisdomDetailActivity : BaseActivity() {
@@ -29,6 +27,24 @@ class WisdomDetailActivity : BaseActivity() {
             adapter = infoVp2Adapter
             offscreenPageLimit = 3
         }
+        vp2_widom_info.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                val view = infoVp2Adapter.getView(position)
+                view.post {
+                    val wMeasureSpec =
+                        View.MeasureSpec.makeMeasureSpec(view.width, View.MeasureSpec.EXACTLY)
+                    val hMeasureSpec =
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+                    view.measure(wMeasureSpec, hMeasureSpec)
+
+                    if (vp2_widom_info.layoutParams.height != view.measuredHeight)
+                        vp2_widom_info.layoutParams =
+                            (vp2_widom_info.layoutParams as ConstraintLayout.LayoutParams)
+                                .also { lp -> lp.height = view.measuredHeight }
+                }
+            }
+        })
 
         TabLayoutMediator(tl_contents, vp2_widom_info) { tab, position ->
             tab.text = when (position) {

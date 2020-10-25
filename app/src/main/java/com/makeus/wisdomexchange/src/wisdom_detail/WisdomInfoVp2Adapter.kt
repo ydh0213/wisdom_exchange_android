@@ -1,5 +1,6 @@
 package com.makeus.wisdomexchange.src.wisdom_detail
 
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -24,6 +25,16 @@ class WisdomInfoVp2Adapter(fa: FragmentActivity) :
             2 -> hopeRequiredFragment
             3 -> exchangeReviewsFragment
             else -> myWisdomFragment
+        }
+    }
+
+    fun getView(position: Int): View {
+        return when (position) {
+            0 -> myWisdomFragment.view!!
+            1 -> hopeWisdomFragment.view!!
+            2 -> hopeRequiredFragment.view!!
+            3 -> exchangeReviewsFragment.view!!
+            else -> myWisdomFragment.view!!
         }
     }
 }
