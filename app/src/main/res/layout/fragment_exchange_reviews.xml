@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_primary"
+    android:layout_height="wrap_content"
     tools:context=".src.wisdom_detail.exchange_reviews.ExchangeReviewsFragment">
+
+    <TextView
+        android:id="@+id/tv_rating_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="교환 평점"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/rb_rating_stars"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4.0"
+        android:stepSize="0.1"
+        android:theme="@style/CustomRatingBarTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rating_title"
+        app:layout_constraintEnd_toStartOf="@+id/tv_rating"
+        app:layout_constraintTop_toTopOf="@+id/tv_rating_title" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="4.0"
+        android:textColor="@color/color_primary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rating_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_rating_title" />
+
+    <ImageView
+        android:id="@+id/iv_separator"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/separator_warm_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rating_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_reviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_separator"
+        tools:listitem="@layout/item_review" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
