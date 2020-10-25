@@ -1,9 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".src.wisdom_detail.hope_required.HopeRequiredFragment">
+
+    <TextView
+        android:id="@+id/tv_can_do_by_online"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/kr_can_do_by_online"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_hope_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/kr_hope_days_of_the_week"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_can_do_by_online"
+        app:layout_constraintTop_toBottomOf="@+id/tv_can_do_by_online" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintEnd_toStartOf="@+id/cl_mon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hope_days">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_sun"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_mon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toStartOf="@+id/cl_tue"
+        app:layout_constraintStart_toEndOf="@+id/cl_sun"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_mon"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toStartOf="@+id/cl_wed"
+        app:layout_constraintStart_toEndOf="@+id/cl_mon"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_tue"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_wed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toStartOf="@+id/cl_thu"
+        app:layout_constraintStart_toEndOf="@+id/cl_tue"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_wed"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_thu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toStartOf="@+id/cl_fri"
+        app:layout_constraintStart_toEndOf="@+id/cl_wed"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_thu"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_fri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toStartOf="@+id/cl_sat"
+        app:layout_constraintStart_toEndOf="@+id/cl_thu"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_fri"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_sat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_sun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cl_fri"
+        app:layout_constraintTop_toTopOf="@+id/cl_sun">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/kr_sat"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_hope_area_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/kr_hope_area"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_can_do_by_online"
+        app:layout_constraintTop_toBottomOf="@+id/cl_mon" />
+
+    <TextView
+        android:id="@+id/tv_hope_area"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="서울시 강남구 역삼동"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_can_do_by_online"
+        app:layout_constraintStart_toStartOf="@+id/tv_can_do_by_online"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hope_area_title" />
+
+    <TextView
+        android:id="@+id/tv_hope_etc_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/kr_hope_etc"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_can_do_by_online"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hope_area" />
+
+    <TextView
+        android:id="@+id/tv_hope_etc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="내가 바라는 기타 사항들에 관해 작성해 주세요/내가 바라는 기타 사항들에 관해 작성해 주세요/내가 바라는 기타 사항들에 관해 작성해 주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_can_do_by_online"
+        app:layout_constraintStart_toStartOf="@+id/tv_can_do_by_online"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hope_etc_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
