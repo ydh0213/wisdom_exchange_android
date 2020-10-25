@@ -22,6 +22,8 @@ class WisdomDetailActivity : BaseActivity() {
     private fun initView() {
         initPhotoVp2()
 
+        cl_back_btn.setOnClickListener { finish() }
+
         val infoVp2Adapter = WisdomInfoVp2Adapter(this)
         vp2_widom_info.apply {
             adapter = infoVp2Adapter
