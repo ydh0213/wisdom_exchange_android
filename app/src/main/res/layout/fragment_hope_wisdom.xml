@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/warm_grey"
     tools:context=".src.wisdom_detail.hope_wisdom.HopeWisdomFragment">
+
+    <TextView
+        android:id="@+id/tv_hope_wisdom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:text="아트"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_hope_wisdom_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:chipSpacing="0dp"
+        app:itemSpacing="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_hope_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_hope_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hope_wisdom" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요/배우고 싶은 재능에 대해 설명해 주세요"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_hope_wisdom"
+        app:layout_constraintStart_toStartOf="@+id/tv_hope_wisdom"
+        app:layout_constraintTop_toBottomOf="@+id/chip_group_hope_wisdom_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
